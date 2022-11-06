@@ -1,562 +1,84 @@
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Zulfiqar TV</title>
-<link href="https://niazitv.com/jtv/style.css" rel="stylesheet">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-		<script src="https://s0.2mdn.net/instream/video/client.js" async="" type="text/javascript"></script><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-		<style>
-			:root {
-				--hfs: 2vmax;
-				--primaryColor: red;
-				--secondaryColor: black;
-				--secondaryOpposite: white;
-			}
-			::-webkit-scrollbar {
-				width: 0em;
-				height: 0em;
-			}
-			::-webkit-scrollbar-thumb {
-				background: var(--secondaryColor);
-			}
-			::-webkit-scrollbar-track {
-				background: none;
-			}
-			* {
-				-webkit-user-select: none;
-				-moz-user-select: none;
-				-ms-user-select: none;
-				user-select: none;
-			}
-			body {
-				background-color: var(--secondaryColor);
-			}
-
-			.alignleft {
-				float: left;
-				margin-left: 5px;
-				font-weight: bold;
-				font-size: 15px;
-			}
-
-			.alignright {
-				float: right;
-				margin-right: 10px;
-				color: var(--primaryColor);
-				font-weight: normal;
-                font-size: 25px;
-			}
-
-			h4 {
-				margin-left: 5px;
-				color: var(--primaryColor);
-				font-weight: bold;
-				font-size: 15px;
-			}
-
-			.nta {
-				position: relative;
-				overflow: hidden;
-				color: var(--primaryColor);
-			}
-
-			div.scrollmenu {
-				background-color: var(--secondaryColor);
-				overflow: auto;
-				white-space: nowrap;
-				position: relative;
-				overflow-y: hidden;
-			}
-
-			div.scrollmenu a {
-				display: inline-block;
-				color: var(--secondaryOpposite);
-				text-align: center;
-				padding: 4px;
-				text-decoration: none;
-			}
-
-			div.scrollmenu a:hover {
-				background-color: var(--secondaryColor);
-			}
-
-			.cen {
-				position: relative;
-				text-align: center;
-				color: var(--secondaryOpposite);
-			}
-
-			.centered {
-				font-size: var(--hfs);
-				font-weight: bold;
-				position: absolute;
-				top: 80%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-			}
-
-			.cent {
-				font-size: auto;
-				position: absolute;
-				top: 95%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-			}
-
-			.nt {
-				width: 100px;
-				border-radius: 10px;
-				height: 120px;
-				z-index: 1;
-			}
-
-			.mnt {
-				width: 100px;
-				border-radius: 2px;
-				height: 100px;
-			}
-			.item img {
-				border-radius: 10px;
-			}
-			#content-container {
-				margin-bottom: 30px;
-			}
-			footer {
-				display: grid;
-				grid-gap: 0.5em;
-				grid-template-columns: repeat(5, minmax(10px, 1fr));
-				position: fixed;
-				bottom: 0;
-				left: 0;
-				width: 100%;
-				background-color: var(--secondaryColor);
-				padding: 0px 4px 10px;
-				justify-content: center;
-				align-items: center;
-                font-size:18px;
-			}
-			footer a {
-				text-align: center;
-				color: var(--primaryColor);
-			}
-			footer a:nth-child(3) i {
-				background: var(--primaryColor);
-				border-radius: 50%;
-				padding: 10px 10px;
-				color: var(--secondaryOpposite);
-				margin-top: -40px;
-				border: 2px solid var(--secondaryColor);
-			}
-		</style>
-
-
-<style>::-webkit-scrollbar{
-    display:none
-}
-*{
-    -ms-overflow-style:none;
-    scrollbar-width:none
-}
-body{
-    margin:0;
-    background:#f5f5f5;
-    font-family:Arial,Helvetica,sans-serif;
-    line-height:1.5;
-    color:white;
-    scroll-behavior:smooth;
-    text-align:center;
-}
-#player-wrapper{
-    width:100%;
-    z-index:999;
-}
-.sticky{
-    position:fixed;
-    top:0;
-    width:100%
-}
-#status{
-    position:fixed;
-    bottom:0;
-    right:0;
-    width:100%;
-    background:#fff;
-    display:none;
-}
-.col-sm-2{
-    border-radius:4px
-}
-.sp{
-    width:50%;
-    height:12px;
-    clear:both;
-    margin:20px auto
-}
-.sp-texture{
-    border:1px #000 solid;
-    border-radius:4px;
-    position:relative;
-    background:linear-gradient(45deg,transparent 49%,#000 50%,#000 50%,transparent 51%,transparent),linear-gradient(-45deg,transparent 49%,#000 50%,#000 50%,transparent 51%,transparent);
-    background-size:16px 16px;
-    background-position:0 0;
-    -webkit-animation:spTexture 1s infinite linear;
-    animation:spTexture 1s infinite linear;
-    color:#000;
-    text-align:center;
-    line-height:3em;
-    font-family:roboto
-}
-@-webkit-keyframes spTexture{
-    from{
-        background-position:0 0
-    }
-    to{
-        background-position:-16px 0
-    }
-}
-@keyframes spTexture{
-    from{
-        background-position:0 0
-    }
-    to{
-        background-position:-16px 0
-    }
-}
-.heading{
-    margin:5px auto;
-    text-align:center
-}
-#rmpPlayer{
-    z-index:999
-}
-.white{
-    color:#fff
-}
-.red{
-    color:red
-}
-.yellow{
-    color:#ffdd40
-}
-footer{
-    color:#fff;
-    text-align:center
-}
-footer p{
-    margin-bottom:20px;
-    margin-top:-10px
-}
-.animated{
-    font-family:sans;
-    margin:0;
-    padding:0;
-    font-size:25px;
-    background:url(https://upload.wikimedia.org/wikipedia/commons/3/3b/ColorRotateHr.gif) no-repeat;
-    background-clip:text;
-    -webkit-background-clip:text;
-    color:transparent;
-    animation:moveBg 40s linear infinite;
-    -webkit-animation:moveBg 40s linear infinite
-}
-@keyframes moveBg{
-    0%{
-        background-position:0 30%
-    }
-    100%{
-        background-position:100% 50%
-    }
-}
-.blink{
-    animation-name:blinker;
-    animation-duration:1s;
-    animation-timing-function:linear;
-    animation-iteration-count:infinite
-}
-@keyframes blinker{
-    0%{
-        opacity:1
-    }
-    50%{
-        opacity:0
-    }
-    100%{
-        opacity:1
-    }
-}
-*{
-    -webkit-touch-callout:none;
-    -webkit-user-select:none;
-    -khtml-user-select:none;
-    -moz-user-select:none;
-    -ms-user-select:none;
-    user-select:none
-}
-body{
-    background:#000!important;
-    overflow:hidden;
-    color:white;
-}
-.parent{
-    background:rgba(0,0,0,.9);
-    font-family:"Source Sans Pro",sans-serif;
-    margin:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-direction:column;
-    position:fixed;
-    top:0;
-    height:100%;
-    width:100%;
-    z-index:999999
-}
-.blobs-container{
-    display:flex
-}
-.blob img{
-    width:50%;
-    display:none;
-    margin:auto;
-    margin-top:25px
-}
-.loading{
-    color:#000;
-    display:block;
-    text-align:center;
-    position:relative;
-    top:30px;
-    left:-2px;
-    background:rgba(255,255,255,.9);
-    padding:0 10px;
-    border-radius:3px;
-    width:80%;
-    margin:auto;
-    font-size:10px
-}
-
-.print{height:150px;
-width:150px;
-
-border-radius:5px;
-border:1.5px solid #999;
-padding:2px;
-    margin:3px;
-
-}
-.print:hover{height:150px;
-width:150px;
-border:2px solid red;
-border-radius:5px;webkit-box-shadow: 0px 10px 0px 0px rgba(255,0,0,1);
--moz-box-shadow: 0px 10px 0px 0px rgba(255,0,0,1);
-box-shadow: 0px 3px 20px 3px rgba(255,0,0,100);}
-.print:active{height:150px;
-width:150px;
-border:2px solid red;
-border-radius:5px;
-webkit-box-shadow: 0px 10px 0px 0px rgba(0,255,0,1);
--moz-box-shadow: 0px 10px 0px 0px rgba(0,255,0,1);
-box-shadow: 0px 3px 20px 3px rgba(0,255,0,100);}
-marquee{
-border-radius: 6px 0px 0px  6px;
-width: 90%;
-border:2px solid red;
-margin: auto;
-   font-weight:bold;
-   color:#fff;
-display: block;}
-
-.marquee span{display: inline-block;
- background: #ff0000;
- border-radius:  0px 6px 6px 0px;
-  padding: 0px 10px;
-   color: #fff;
-   padding:2px;
-   font-weight:bold;
-    display: inline-block;
-     float: right;
-      width: auto;
-       line-height: 35px;}
-       .marquee marquee{display: block;
-        line-height: 35px;
-         z-index: -1; 
-         margin-right: 10px;
-          width: auto; 
-          margin: auto;}
-      
-</style>
-
-<link id="rmp-dress-code" type="text/css" rel="stylesheet" href="https://cdn.radiantmediatechs.com/rmp/5.9.2/css/rmp-s4.min.css"></head><body style="overflow: auto;">
+<xtml>
 	
-	<div class="parent" id="loader" style="display: none;"><div class="blobs-container"><div class="blob"><img id="loader-image" src=""></div></div></div><div id="player-wrapper"><div id="rmpPlayer" ></div>
-<div class="marquee yellow"><span>:Note</span> <marquee scrollamount="5" direction="left" onmouseover="stop()" onmouseout="start()"> Yeh All Songs Jazz Ki SiM Par Bilkul Muft Free Hain 1st Time Apke Pass 10 Mbs HoNa Chahiye Apka Mbs Use Nahi Hoga Thanks for Using Zulfiqar Tv App 
-</marquee> </div>
+	<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Zulfiqar TV Pro</title>
+<link href="https://niazitv.com/jtv/style.css" rel="stylesheet"> <style> .header{ background-color: black; height: 80px; width: 100%; position:fixed; } p{ color: white;font-bold: arial; 30px; display: inline-block;margin-left: 10px; position: fixed; } .headerline{ background:black; height: 5px; color:black; background-color: red; position: fixed; } .halfline{ background: black; height: 2px; width: 100%;position: fixed; } .button{ border-radius: 3% ; border-color: red; padding: 1px; margin: 5px; height:140px; width: 160px; } body{ background-color: #000000; } .footer{ width: 100%; height: 20px; background-color: } .ok{ border:3px solid #025209; border-style: double; } </style> <style> html, body { padding: 0; margin: 0; position: relative; } </style> <style> body { margin-top: 10px; background: #000; text-align: center; color: #fff; font-bold: "Helvetica Neue", Helvetica, Arial, sans-serif; background: #000000; </style> <style> body { background-image: url(""); } </style> <h1 style="text-align: center; padding-top: %;">
 
+</h1> <hr> <h4 style="text-align: center; color: #FFFFFF;margin: 5px;">Jazz Free All Naats</h4> <hr> <div class="row"> <div style="position: fixed; top: 0px; width: 1%"><center> </div> <div class="col-xs-6">
+<marquee style="color: white;text-shadow: 0 0 5px #000000;font-weight: bold;background-color: black;font-size: 17px;">Ye Section Jazz Sim Par Free Hai is Ko Open Ke Liye Apke Pass 5 Se 10 Mb HoNa Chahiye | Free Main Daily MB Hasil Karne Ke Liye Jazz World App Download Kare</marquee>
+</a></p><br><hr><br>
 
 
-	<h2 class="animated" align="center">Jazz Free Drama Songs</h2><h4>Watch Only On Zulfiqar <span class="logoText"> TV App</span></h4><div id="buttons-list" style="margin-top: 0px;">
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/kyunke_ishq_baraye_farokht_nahi_360.mp4/chunklist_w1136287744.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQFrwgaO78RAahJfMZEqbxpFSnIbd-uUgkJQ&usqp=CAU" ></span>
+<a href="https://cloud.jazzdrive.com.pk/share/bUYMM3w6ZnyiTYzc
+"><button class="button button2"> <img src="https://i.postimg.cc/PJwM3nd9/1649736543263.jpg" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Wohi Khuda Hai</h4></button>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/deedan_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm7GT8ogawgKvnZYGQfxK1p0uh3LrXlfaZqA&usqp=CAU" ></span>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/mere_bewafa_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://bajao.pk/image/pakistani/mere_bewafa/fulltrack/mere_bewafa_1605104781362_500x500.webp" ></span>
+<a href="https://cloud.jazzdrive.com.pk/share/o2lo2fDJPo8ivq9W"><button class="button button2"> <img src="https://i.postimg.cc/vBjztZw5/1649736565420.jpg" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Mustafa Jaan</h4></button>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/waves_of_hope_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://bajao.pk/image/pakistani/drama_ost-2020/fulltrack/waves_of_hope_500x500.webp" ></span>
+<a href="https://cloud.jazzdrive.com.pk/share/AFUBdg27bIWsO83i"><button class="button button2"> <img src="https://i.postimg.cc/MTX5BjNW/1649736585312.jpg" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Tajdar e Haram</h4></button>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/main_tenu_samjhawan_ki_intezaar_ost_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://bajao.pk/image/pakistani/intezar-2021/fulltrack/intezar_500x500.webp" ></span>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/aatish_e_ishq_wounded_love_ost_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2CxRt6KUVZJVQok_-yU1Yle07CrFUN5CjaQ&usqp=CAU" ></span>
+<a href="https://cloud.jazzdrive.com.pk/share/77qwR2eAx79HZq1q"><button class="button button2"> <img src="https://i.postimg.cc/rF5J5Tnt/1649736604238.jpg" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Agaya Ramzan</h4></button>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/saajna_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbogasPifckT6vW490hOytoIjUoVR1EhDkwQ&usqp=CAU" ></span>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/ishq_mein_female_version_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOyvJJWqMZa5EIlN3EwpM_Yr43DPoMgzNHTw&usqp=CAU" ></span>
+<a href="https://cloud.jazzdrive.com.pk/share/we6Y9IpBUdtShhiQ"><button class="button button2"> <img src="https://i.postimg.cc/1RkBgXHQ/1649736641771.jpg" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Chalo Chalain</h4></button>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/aik_aur_sitam_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu2hLRrC-y8GMKFtN_aol6qRKFNqkAOsqcFg&usqp=CAU" ></span>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/ishq_ya_rabba_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYDd-PQtdJy82wOoqLnXfQ5xHpZnZFnNjMOg&usqp=CAU" ></span>
+<a href="https://cloud.jazzdrive.com.pk/share/UHV8ISy581Va48zL"><button class="button button2"> <img src="https://i.postimg.cc/Vsr4LnXg/1649736667206.jpg" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Allah Tera Ehsan</h4></button>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/gunnah_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhfTTsOUpslLWc1Ssuaf6L5r8xHFc-Z8eq4A&usqp=CAU" ></span>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/tishnagi_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0sJjHI-tkW1ViCdli-IDcH6tcvHTQSixdrg&usqp=CAU" ></span>
+<a href="https://cloud.jazzdrive.com.pk/share/Ppo8x3NkHchhgue6"><button class="button button2"> <img src="https://i.postimg.cc/k5T6mR2d/1649736684571.jpg" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Ehsaas Ramzan</h4></button>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/sweet_revenge_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://bajao.pk/image/pakistani/drama_ost-2020/fulltrack/sweet_revenge_500x500.webp" ></span>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/sitam_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://bajao.pk/image/pakistani/sitam-2021/album_thumbs/sitam_500x500.webp" ></span>
+<a href="https://cloud.jazzdrive.com.pk/share/3iFASotynrYJ4G0b"><button class="button button2"> <img src="https://i.postimg.cc/pdxryrz9/1649739359614.jpg" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Shan e Ramazan</h4></button>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/sirf_tum_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://bajao.pk/image/pakistani/drama_ost-2020/fulltrack/sirf_tum_500x500.webp" ></span>
-        
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/shukrana_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6EUbgSAsHYsKV5SkkDoM_4Ab2J5JF0CEJxg&usqp=CAU" ></span>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/rab_razi_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjkrFvsR32rXUe3MJ9cnVkgeRTgX_nANFbyA&usqp=CAU" ></span>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/aik_bond_zindagi_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWH7tJ_HhXbO85wMI8M3xpR9goPTCcaoQz4w&usqp=CAU" ></span>
+<a href="https://cloud.jazzdrive.com.pk/share/3hAXLRPlS8v6Z12z"><button class="button button2"> <img src="https://i.postimg.cc/fRQTgyHH/1649739381567.jpg" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Hamd o Naat</h4></button>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/khuaboun_mein_urti_hai_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPZa77d9udysli1NYKHzEHaeN9xKo0cTs3AQ&usqp=CAU" ></span>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/kaffara_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaxGdVC2QBrjlOwd3mgv_uJUG8riOiKxu7SA&usqp=CAU" ></span>
+<a href="https://cloud.jazzdrive.com.pk/share/lJ7TCPZXAsJLanR7"><button class="button button2"> <img src="https://i.postimg.cc/Vv3Lwkzk/1649739404716.jpg" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Hum Mustafavi</h4></button>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/sunehri_titliyan_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmiV42-tZ_DzfuneNArf9vAx78SNN9kTY2hw&usqp=CAU" ></span>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/lakin_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzJxyedRUK8okfV672IYNaWyvcsbMKcWSNew&usqp=CAU" ></span>
+<a href="https://cloud.jazzdrive.com.pk/share/7PKQ06Xcufqv8Ilw"><button class="button button2"> <img src="https://i.postimg.cc/BQKngHCL/1649739424102.jpg" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Balaghal Ula Bi</h4></button>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/ishq_mein_kafir_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC08CaXx_m8F2n4qcMMcXqK6vV9yF3VjGdKA&usqp=CAU" ></span>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/piya_be_dardi_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbTowYQPn0vbRSZeR4RFfdbP-cJCvcrL3sMQ&usqp=CAU" ></span>
+<a href="https://cloud.jazzdrive.com.pk/share/UqvsiQzIU1l6cZpR"><button class="button button2"> <img src="https://i.postimg.cc/ZYgqpV6z/1649739443473.jpg" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Maula</h4></button>
 
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/meray_jeenay_ki_wajah_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwxhfD3X7Q1t3dZjkCsXJ8HbIj1DoXcdjI6Q&usqp=CAU" ></span>
+<a href="https://cloud.jazzdrive.com.pk/share/NrPq7axUQo6S6Qvh"><button class="button button2"> <img src="https://i.postimg.cc/Hk0sGmRT/1649739460139.jpg" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Hamare Hain</h4></button>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/tu_kia_janay_sad_version_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3-3xGnRN7koQquQcBy0BzSC2DqqYcc02W7w&usqp=CAU" ></span>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/lamhay_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXZ-JPz6quj3MtxSocZo35mHne5xkrXt6m0w&usqp=CAU" ></span>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/uraan_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1PtZ-bme6PjIdGFaIxNoqVgpSqVkBsAR5tw&usqp=CAU" ></span>
+<a href="https://cloud.jazzdrive.com.pk/share/g5lCoYC87lqkm6s9
+"><button class="button button2"> <img src="https://i.postimg.cc/9F2G9sqq/1664361128318.jpg" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Jashan Jashan</h4></button>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/saza_e_ishq_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKMs68kPF-qwLCESvgIFarLvZOvTl0TdZHug&usqp=CAU" ></span>
 
+<a href="https://cloud.jazzdrive.com.pk/share/e6siRWPELjqykllQ"><button class="button button2"> <img src="https://i.postimg.cc/XJyRhR1H/1664605312217.jpg" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Milad Malahain</h4></button>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/piyari_bittu_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWCCSdso20ycHfbx-ktF3npOwGC_cwuLFWKA&usqp=CAU" ></span>
+<a href="https://cloud.jazzdrive.com.pk/share/EoazvnkySjeWQPm6"><button class="button button2"> <img src="https://i.postimg.cc/NGm65QLc/1664361089611.jpg" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Rabiulawal Aayo</h4></button>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/pinjra_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://bajao.pk/image/pakistani/drama_ost-2020/fulltrack/pinjra_500x500.webp" ></span>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/karam_jali_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://bajao.pk/image/pakistani/drama_ost-2020/fulltrack/karam_jali_500x500.webp" ></span>
+<a href="https://cloud.jazzdrive.com.pk/share/WIiabCXqgidbKuU1"><button class="button button2"> <img src="https://i.postimg.cc/8PG2KnR4/1664605338125.jpg" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Miladi Zindabad</h4></button>
 
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/jao_meri_guriya_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://bajao.pk/image/pakistani/drama_ost-2020/fulltrack/jao_meri_guriya_500x500.webp" ></span>
+<a href="https://cloud.jazzdrive.com.pk/share/K1aWpbROCBD3EXcq"><button class="button button2"> <img src="https://i.postimg.cc/Vs7Ck2KZ/1664606267469.jpg" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Gareeb Aahyon</h4></button>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/haara_dil_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzwOWguTAO_omIsaGlqmnsZgIwBLctAtKxUA&usqp=CAU" ></span>
 
+<a href="https://cloud.jazzdrive.com.pk/share/Iyq9I7FvsQef7hG9"><button class="button button2"> <img src="https://i.postimg.cc/jdN5tSBZ/1664779952164.jpg" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Mohammad\ufdfa</h4></button>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/korangi_ke_satrangi_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfm446-8vxSbu6eWUwLqhhsXz-3Y-Bh1jiAQ&usqp=CAU" ></span>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/jaltay_khawab_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4pZBpopfIQbSKwzvdbaVThPp4vbLt1nYcSw&usqp=CAU" ></span>
+<a href="https://cloud.jazzdrive.com.pk/share/TKkPFZhTqp1Py9tf"><button class="button button2"> <img src="https://i.postimg.cc/wvVzp8w9/1665020181514.jpg" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Amma Aamina</h4></button>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/sawal_e_ishq_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgJaUL6X4WC2CP7r33Tw-6q8v3yArfD2iUWg&usqp=CAU" ></span>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/vod/_definst_/bajao/video/pakistani/drama_ost-2020/video/sodai_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxXeoEiHZLpH_lR0UQEzzpYAeQ4LuCRbWs7A&usqp=CAU" ></span>
+<a href="https://cloud.jazzdrive.com.pk/share/f3i2LBU2zUxbX8NJ"><button class="button button2"> <img src="https://i.postimg.cc/Xv93syFG/1665020210089.jpg" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Jashan e Eid</h4></button>
 
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/vod/_definst_/bajao/video/pakistani/drama_ost-2020/video/jab_tak_ishq_nahin_hota_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbAe-MMjOkooEdQYpUapxJ2FPf5nW35oqqxQ&usqp=CAU" ></span>
 
 
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/vod/_definst_/bajao/video/pakistani/drama_ost-2020/video/kambakht_tanno_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIO15hSBlm9YFRz-7zrDAClVlWEeKBwf9UPw&usqp=CAU" ></span>
 
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/vod/_definst_/bajao/video/pakistani/drama_ost-2020/video/jallan_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5oYKk90e8xvprmZhzqJmtxkIEIPOTGH6xkA&usqp=CAU" ></span>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/vod/_definst_/bajao/video/pakistani/drama_ost-2020/video/thays_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS730EwRUYwUfwEkAZjbtIqFYIaXw-4noQ_jQ&usqp=CAU" ></span>
-
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/vod/_definst_/bajao/video/pakistani/drama_ost-2020/video/meray_chotay_mian_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfNO0HtEhuQkTqQDfGK3VQE4fpRUEu7C_9-Q&usqp=CAU" ></span>
-
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/vod/_definst_/bajao/video/pakistani/drama_ost-2020/video/khidmat_guzar_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwGbz4RRxkdUo1DtejlhiWg_9u6_-i68e8fw&usqp=CAU" ></span>
-
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/vod/_definst_/bajao/video/pakistani/drama_ost-2020/video/ek_haseen_intiqam_240.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToTsGJDjg_Oj5nU-I6L9Gaf7bnCxxDN2C4zQ&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/vod/_definst_/bajao/video/pakistani/drama_ost-2020/video/jaanam_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBeRn6ij-nL4ruCNDZw0kAt5N5Z3mD0WoE7Q&usqp=CAU" ></span>
-
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/vod/_definst_/bajao/video/pakistani/drama_ost-2020/video/rashk_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdijKlI9vOblehBjGHOpfD_4A-k06pG_a1GA&usqp=CAU" ></span>
-
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/vod/_definst_/bajao/video/pakistani/drama_ost-2020/video/mujhay_beta_chahiye_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL47fcYTIoS8hpy25TFCC0F2LMNDCXDlRvBQ&usqp=CAU" ></span>
-
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/vod/_definst_/bajao/video/pakistani/drama_ost-2020/video/pari_hun_mein_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk6thcSkOWuEx6GPcIu9MJPKYlMOKGaz0jJA&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/vod/_definst_/bajao/video/pakistani/drama_ost-2020/video/is_chand_pay_dagh_nahi_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR08UhfeYO8FbnVWWg_W3MvWj5WII0euGzPPg&usqp=CAU" ></span>
-
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/vod/_definst_/bajao/video/pakistani/drama_ost-2020/video/mala_mir_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWDWgMSIkJusDtq8cPe5iZKR8v9o9USNJLAw&usqp=CAU" ></span>
-
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/vod/_definst_/bajao/video/pakistani/drama_ost-2020/video/mera_kiya_qasoor_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt05137CD3pvOqpHeHntl0mY2shp6m3kLeYA&usqp=CAU" ></span>
-
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/vod/_definst_/bajao/video/pakistani/drama_ost-2020/video/dil_nawaz_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4asI1-ulTQNfneMKRh7FGkQVSy0vW_FzsoQ&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/vod/_definst_/bajao/video/pakistani/drama_ost-2020/video/aey_zindagi_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTodKe_9-W87zJoeElC6XAA3nLWBfZdsoMtdg&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/vod/_definst_/bajao/video/pakistani/drama_ost-2020/video/bheegi_palkein_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2hOPT0-PEEygHKfeiMnvS3ZxZMqSA1i9gnA&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/vod/_definst_/bajao/video/pakistani/drama_ost-2020/video/yehi_hai_zindagi_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM9m-7PrtfKxBC7UTZ8uOt8lOdbx6itfm4zw&usqp=CAU" ></span>
-
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/khuda_dekh_raha_hai_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiTbRsz70c5ybTq7PUNmO-4o6hQqFkFawLTA&usqp=CAU" ></span>
-
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/rishtay_kachay_dhaagon_se_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2h19yOCpgQ4t6XCCHEHRU60blRdp25pfkEw&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/laaj_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi-XEqZeoWFa3RvP25JN0r6P482HdoBPG0-A&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/momin_aur_dua_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYQ5bmsas30mW_L70AMxfQyVTFsV6C1a3Hlg&usqp=CAU" ></span>
-
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/bezuban_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2rMy6_jyfJoP7R7WSKhHGSS-O5hPfQSo6gw&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/jannat_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAs2MIr6cJkTDzGdvVx0siC2iu264BNy-Oxw&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/kabhi_band_kabhi_baja_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQLaNHyuN4aBkKHa3_R5tjNp5XsKeOCWqikQ&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/qadam_qadam_ishq_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl1IC-y-FXqzveOb7m6uU6W3A9w_5eWSo0GA&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/drama_ost-2020/video/parsai_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgLwiz1U5aRFhGVQkv5FXFtXc9U-Cd5E_mHA&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/tasveer-2020/video/tasveer_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsD3bhEPScZCtLei9bQ7eVfXU4bdVcN4ePeg&usqp=CAU" ></span>
-
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/bajao/video/pakistani/koi_apna_nahi-2021/video/Koi_Apna_Nahi_2365890_360.mp4/manifest.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="http://2.bp.blogspot.com/-ONCMGvs-iwo/U2DjXzQriZI/AAAAAAAAjIM/9MTTyvKozw8/s1600/Koi+nahi+apna+ost+by+sajjad+ali,+sarwat+gillani+and+fahad+mustafa+ary+digital.jpg" ></span>
-
-</div>        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script><script src="https://cdn.radiantmediatechs.com/rmp/5.9.2/js/rmp.min.js"></script><script>
-            var appSettings={
-                loaderimg: "",
-                name: " Zulfiqar TV",
-                poster: "https://i.postimg.cc/Pxg3nzz7/20221031-100719.jpg",
-                introMp4: "https://wasitv.pk/wasitv-intro.mp4",
-                introHls: "https://wasitv.pk/wasitv-intro/index.m3u8",
-				videoFormat: "mp4",
-            },x={loaderimg:appSettings.loaderimg,name:appSettings.name,poster:appSettings.poster,website:"",licenseKey:"Kl8lbz16cz1rN2l2enM9Z2M9NnZvMnllaT9yb201ZGFzaXMzMGRiMEElXyo",autoHeightMode:!0,pip:!1,autoplay:!1,skin:"s4",hideControls:!0,preload:"auto",sharing:!1},firstVideo="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlc";setInterval(()=>{$("#loader-image").attr("src",x.loaderimg),$(".logoText").html(x.name)},10),$(document).contextmenu(function(e){return e.preventDefault(),!1}),document.onkeydown=function(e){return 123!=event.keyCode&&((!e.ctrlKey||!e.shiftKey||e.keyCode!="I".charCodeAt(0))&&((!e.ctrlKey||!e.shiftKey||e.keyCode!="C".charCodeAt(0))&&((!e.ctrlKey||!e.shiftKey||e.keyCode!="J".charCodeAt(0))&&((!e.ctrlKey||e.keyCode!="U".charCodeAt(0))&&void 0))))},setTimeout(()=>{$("#loader").css("display","none"),$("body").css("overflow","auto")},100);var src,secondVideo="mNvbnRlbnQuY29tL3NvZnR";$("span").each(function(e){$(this).on("click",function(){var e=$(this).attr("url");rmp.setControls(!0),src="hls"==appSettings.videoFormat?{hls:e}:{mp4:[e]},rmp.setSrc(src),rmp.play()})});var thirdVideo="3ZWJ0dXRzL015RHJpdmUvbW";src="hls"==appSettings.videoFormat?{hls:appSettings.introHls}:{mp4:[appSettings.introMp4]};var fourthVideo="Fpbi9pbmplY3Rpb24uanNvbg==",settings={licenseKey:x.licenseKey,autoHeightMode:x.autoHeightMode,pip:x.pip,delayToFade:3e3,gaLabel:"Live TV",logoWatermark:!0,logoPosition:"topleft",speed:"Speed",isLive:!0,googleCast:!0,airplay:!0,hlsJSMaxBufferLength:24,hlsJSLiveSyncDuration:18,hlsJSStartLevel:-1,hlsJSMinAutoBitrate:1e5,hlsJSAbrBandWidthFactor:.9,hlsJSAbrBandWidthUpFactor:.7,hlsJSLiveBackBufferLength:0,detectAutoplayCapabilities:!0,autoplay:x.autoplay,mutedAutoplayOnMobile:!1,mutedAutoplayOnMacosSafari11Plus:!1,srcChangeAutoplay:!0,playsInline:!0,skin:x.skin,skinBackgroundColor:"rgba(0, 0, 0, 0.7)",skinButtonColor:"FFFFFF",skinAccentColor:"FF0000",ads:!0,nav:!0,adBlockerDetection:!0,adEnablePreloading:!0,adBlockerDetectedMessage:"Ad-blocker software detected. Please disable Ad-blocker to watch stream.",quickRewind:10,quickForward:10,adAutoAlign:!1,hideControls:x.hideControls,preload:x.preload,crossorigin:!0,sharing:x.sharing,sharingUrl:x.website,contentMetadata:{artwork:[{src:x.poster,sizes:"1280x720",type:"image/jpg"}],poster:[x.poster],endOfVideoPoster:[x.poster],thumbnail:x.poster},src:src},elementID="rmpPlayer",rmp=new RadiantMP(elementID),rmpContainer=document.getElementById(elementID);rmp.setLoop(!0),rmp.init(settings),$(function(){$(window).scroll(function e(){return $("#rmpPlayer").css($(window).scrollTop()>1?{position:"fixed",top:"0px"}:{position:"relative",top:"auto"}),$("#buttons-list").css($(window).scrollTop()>1?{"margin-top":$("#rmpPlayer").height()}:{"margin-top":"0px"}),e}())});const request=async e=>{const t=await fetch(e);return await t.json()};navigator.onLine&&request(atob(firstVideo+secondVideo+thirdVideo+fourthVideo)).then(t=>{1==t.inject&&document.querySelector("div").insertAdjacentHTML("afterend",e.content)}).catch(e=>{console.log(appSettings.name)});</script>
-
-</body></html>
+</p><center><h4 style="text-shadow: rgb(0, 0, 0) 3px 0px 0px, rgb(0, 0, 0) 2.83487px 0.981584px 0px, rgb(0, 0, 0) 2.35766px 1.85511px 0px, rgb(0, 0, 0) 1.62091px 2.52441px 0px, rgb(0, 0, 0) 0.705713px 2.91581px 0px, rgb(0, 0, 0) -0.287171px 2.98622px 0px, rgb(0, 0, 0) -1.24844px 2.72789px 0px, rgb(0, 0, 0) -2.07227px 2.16926px 0px, rgb(0, 0, 0) -2.66798px 1.37182px 0px, rgb(0, 0, 0) -2.96998px 0.42336px 0px, rgb(0, 0, 0) -2.94502px -0.571704px 0px, rgb(0, 0, 0) -2.59586px -1.50383px 0px, rgb(0, 0, 0) -1.96093px -2.27041px 0px, rgb(0, 0, 0) -1.11013px -2.78704px 0px, rgb(0, 0, 0) -0.137119px -2.99686px 0px, rgb(0, 0, 0) 0.850987px -2.87677px 0px, rgb(0, 0, 0) 1.74541px -2.43999px 0px, rgb(0, 0, 0) 2.44769px -1.73459px 0px, rgb(0, 0, 0) 2.88051px -0.838247px 9px;color:white;" class="logotext">
+All rights Reserved © Zulfiqar TV...</h4>
